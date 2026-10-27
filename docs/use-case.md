@@ -42,7 +42,7 @@ Diyagram aşağıdaki UML gösterim kurallarına göre hazırlanmıştır:
 
 Diyagramda araştırmacı aktörü, altı kullanım durumuyla ilişkilendirilmiştir.
 
-**Diyagram görseli:** Bu belgeye ayrıca UML diyagramı görseli eklenecektir.
+**Diyagram görseli:** ![UML Use Case Diyagramı](use-case.svg)
 
 ## <u>5. GEREKSİNİMLERLE İLİŞKİSİ</u>
 
