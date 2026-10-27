@@ -1,105 +1,173 @@
 # Proje-Marmara
-# Yapay Zekâ Kullanım Alışkanlıkları ve Tutumları Araştırması
+# Yapay Zekâ Kullanım Alışkanlıkları, Tercihleri ve Kullanıcı Endişelerinin Veri Analizi
 
 ## <u>1. Proje Hakkında</u>
 
-Bu proje, bireylerin yapay zekâ kullanım alışkanlıklarını, kullanım amaçlarını ve yapay zekâ tarafından verilen cevaplara yönelik güven düzeylerini incelemek amacıyla yürütülen akademik bir araştırmadır.
+Bu proje, bireylerin yapay zekâ araçlarını kullanım alışkanlıklarını, tercihlerini, kullanım amaçlarını ve yapay zekâ teknolojilerine yönelik endişelerini incelemek amacıyla yürütülen akademik bir veri analizi çalışmasıdır.
 
-Araştırma kapsamında Google Forms aracılığıyla anket yanıtları toplanacak ve elde edilen veriler uygun istatistiksel yöntemlerle analiz edilecektir.
+Araştırmada daha önce yayımlanmış **AI Tools and Technology Trends** adlı hazır veri seti kullanılacaktır.
+
+Veriler istatistiksel yöntemlerle analiz edilerek yapay zekâ kullanım davranışları arasındaki olası ilişkiler araştırılacaktır.
 
 ## <u>2. Araştırmanın Amacı</u>
 
-- Bireylerin yapay zekâ kullanım sıklıklarını incelemek.
-- Yapay zekânın hangi amaçlarla kullanıldığını belirlemek.
-- Yaş ve cinsiyet grupları ile yapay zekâ kullanım sıklığı arasındaki ilişkileri incelemek.
-- Yapay zekâ cevaplarına duyulan güven düzeyini değerlendirmek.
-- Yapay zekâ kullanım amaçları ile cevaplara duyulan güven düzeyi arasındaki ilişkiyi araştırmak.
+- Yapay zekâ araçlarının kullanım sıklığını incelemek.
+- En çok tercih edilen yapay zekâ araçlarını belirlemek.
+- Yapay zekânın hangi amaçlarla kullanıldığını araştırmak.
+- Kullanıcıların yapay zekâ araçlarını seçerken önem verdiği özellikleri incelemek.
+- Yapay zekâ teknolojilerine yönelik endişeleri değerlendirmek.
+- Kullanım sıklığı, araç tercihleri ve kullanım amaçları arasındaki ilişkileri analiz etmek.
+- Elde edilen bulguları grafikler ve istatistiksel yöntemlerle yorumlamak.
 
 ## <u>3. Araştırma Soruları ve Hipotezler</u>
 
-### Hipotez 1: Yaş ve Kullanım Sıklığı
+### Hipotez 1: Kullanım Sıklığı ve Kullanım Amacı
 
-**Araştırma sorusu:** Katılımcıların yaş grupları ile yapay zekâ kullanım sıklıkları arasında ilişki var mıdır?
+**Araştırma sorusu:** Yapay zekâ kullanım sıklığı ile kullanım amaçları arasında ilişki var mıdır?
 
-- **H₀ (Sıfır hipotezi):** Yaş grubu ile yapay zekâ kullanım sıklığı arasında istatistiksel olarak anlamlı bir ilişki yoktur.
-- **H₁ (Alternatif hipotez):** Yaş grubu ile yapay zekâ kullanım sıklığı arasında istatistiksel olarak anlamlı bir ilişki vardır.
+- **H₀ (Sıfır hipotezi):** Yapay zekâ kullanım sıklığı ile kullanım amacı arasında istatistiksel olarak anlamlı bir ilişki yoktur.
+- **H₁ (Alternatif hipotez):** Yapay zekâ kullanım sıklığı ile kullanım amacı arasında istatistiksel olarak anlamlı bir ilişki vardır.
 
-**Planlanan analiz:** Koşullar sağlandığında ki-kare bağımsızlık testi.
+**Planlanan analiz:** Çapraz tablolar ve uygun koşullarda Ki-kare bağımsızlık testi.
 
-### Hipotez 2: Kullanım Sıklığı ve Güven Düzeyi
+### Hipotez 2: Yapay Zekâ Aracı Tercihi ve Kullanım Amacı
 
-**Araştırma sorusu:** Yapay zekâ kullanım sıklığı ile yapay zekâ cevaplarına duyulan güven düzeyi arasında ilişki var mıdır?
+**Araştırma sorusu:** Tercih edilen yapay zekâ araçları ile kullanım amaçları arasında ilişki var mıdır?
 
-- **H₀ (Sıfır hipotezi):** Kullanım sıklığı ile güven düzeyi arasında istatistiksel olarak anlamlı bir ilişki yoktur.
-- **H₁ (Alternatif hipotez):** Kullanım sıklığı ile güven düzeyi arasında istatistiksel olarak anlamlı bir ilişki vardır.
+- **H₀:** Tercih edilen yapay zekâ araçları ile kullanım amaçları arasında istatistiksel olarak anlamlı bir ilişki yoktur.
+- **H₁:** Tercih edilen yapay zekâ araçları ile kullanım amaçları arasında istatistiksel olarak anlamlı bir ilişki vardır.
 
-**Planlanan analiz:** Değişkenlerin ölçüm düzeylerine göre uygun bir ilişki testi seçilecektir.
+**Planlanan analiz:** Frekans analizi, çapraz tablolar ve uygun koşullarda Ki-kare bağımsızlık testi.
 
-### Hipotez 3: Cinsiyet ve Kullanım Sıklığı
+### Hipotez 3: Kullanım Sıklığı ve Yapay Zekâya Yönelik Endişeler
 
-**Araştırma sorusu:** Katılımcıların cinsiyet grupları ile yapay zekâ kullanım sıklıkları arasında ilişki var mıdır?
+**Araştırma sorusu:** Yapay zekâ kullanım sıklığı ile kullanıcıların yapay zekâ teknolojilerine yönelik endişeleri arasında ilişki var mıdır?
 
-- **H₀ (Sıfır hipotezi):** Cinsiyet grubu ile yapay zekâ kullanım sıklığı arasında istatistiksel olarak anlamlı bir ilişki yoktur.
-- **H₁ (Alternatif hipotez):** Cinsiyet grubu ile yapay zekâ kullanım sıklığı arasında istatistiksel olarak anlamlı bir ilişki vardır.
+- **H₀:** Yapay zekâ kullanım sıklığı ile kullanıcıların endişeleri arasında istatistiksel olarak anlamlı bir ilişki yoktur.
+- **H₁:** Yapay zekâ kullanım sıklığı ile kullanıcıların endişeleri arasında istatistiksel olarak anlamlı bir ilişki vardır.
 
-**Planlanan analiz:** Koşullar sağlandığında ki-kare bağımsızlık testi.
+**Planlanan analiz:** Çapraz tablolar, yüzde dağılımları ve uygun koşullarda Ki-kare bağımsızlık testi.
 
-### Hipotez 4: Kullanım Amacı ve Güven Düzeyi
+**Not:** Hipotezler analiz öncesinde oluşturulmuştur. İstatistiksel testlerin uygulanabilirliği veri yapısı ve varsayımlar kontrol edildikten sonra kesinleştirilecektir.
 
-**Araştırma sorusu:** Yapay zekânın farklı amaçlarla kullanılması ile yapay zekâ cevaplarına duyulan güven düzeyi arasında ilişki var mıdır?
+## <u>4. Kullanılacak Veri Seti</u>
 
-- **H₀ (Sıfır hipotezi):** Yapay zekâ kullanım amacı ile cevaplara duyulan güven düzeyi arasında istatistiksel olarak anlamlı bir ilişki yoktur.
-- **H₁ (Alternatif hipotez):** Yapay zekâ kullanım amacı ile cevaplara duyulan güven düzeyi arasında istatistiksel olarak anlamlı bir ilişki vardır.
+Araştırmada **AI Tools and Technology Trends** adlı yayımlanmış veri seti kullanılacaktır.
 
-**Planlanan analiz:** Her bir kullanım amacı ayrı bir değişken olarak ele alınacak ve uygun istatistiksel yöntemlerle değerlendirilecektir.
+**Veri kaynağı:** Mendeley Data
 
-## <u>4. Veri Seti</u>
+**Veri seti bağlantısı:** https://data.mendeley.com/datasets/wphjf9t7bv/1
 
-Araştırmada kullanılacak veri seti, araştırmacılar tarafından hazırlanan anket aracılığıyla toplanan katılımcı yanıtlarından oluşturulacaktır.
+**Veri türü:** Anket yanıtlarından oluşan yapılandırılmış tablo verisi.
 
-- **Veri toplama aracı:** Google Forms
-- **Veri düzenleme araçları:** Google Sheets veya Microsoft Excel
-- **Veri türü:** Anket yanıtlarından oluşan tablo verisi
-- **Katılımcı hedefi:** En az 100 katılımcıya ulaşmak ve mümkünse daha geniş bir örneklem elde etmek.
+Veri setinde incelenecek başlıca değişkenler:
 
-Katılımcı yanıtları toplandıktan sonra veri seti kontrol edilecek, eksik veya hatalı kayıtlar değerlendirilecek ve analiz için düzenlenecektir.
+- Yapay zekâ kullanım sıklığı
+- Tercih edilen yapay zekâ araçları
+- Yapay zekâ kullanım amaçları
+- Araç seçiminde önem verilen özellikler
+- Yapay zekâ teknolojilerine yönelik endişeler
+- Teknoloji trendlerine yönelik ilgi alanları
+
+Veri seti analiz öncesinde incelenecek, eksik ve hatalı kayıtlar kontrol edilecek, gerekli veri temizleme işlemleri gerçekleştirilecektir.
+
+Veri setinin kaynak bilgileri, kullanım koşulları ve veri toplama yöntemi akademik raporda belirtilecektir.
 
 ## <u>5. Kullanılacak Yöntemler</u>
 
-- Frekans ve yüzde analizi
-- Çapraz tablolar ve pivot tablolar
-- Sütun ve pasta grafikleri
-- Uygun koşullar sağlandığında ki-kare bağımsızlık testi
-- Güven düzeyi gibi sıralı değişkenler için uygun ilişki analizleri
-- Araştırma bulgularının yorumlanması
+Araştırma kapsamında aşağıdaki yöntemlerin kullanılması planlanmaktadır:
 
-Kullanılacak istatistiksel testler, veri seti elde edildikten sonra değişkenlerin yapısı ve test varsayımları kontrol edilerek kesinleştirilecektir.
+- Google Sheets ile veri düzenleme
+- Veri temizleme ve eksik veri kontrolü
+- Frekans ve yüzde analizi
+- Pivot tablolar
+- Çapraz tablolar
+- Sütun, çubuk ve pasta grafikleri
+- Koşullu biçimlendirme
+- Tanımlayıcı istatistikler
+- Uygun koşullarda Ki-kare bağımsızlık testi
+- Bulguların karşılaştırılması ve yorumlanması
+
+
+Çoklu seçim içeren değişkenler, uygun biçimde ayrıştırılarak analiz edilecektir.
 
 ## <u>6. Etik İlkeler ve Veri Gizliliği</u>
 
-Bu araştırma, gönüllü katılım ve bilgilendirilmiş onam ilkeleri esas alınarak yürütülecektir. Katılımcılara araştırmanın amacı ve verilerin kullanım kapsamı hakkında gerekli bilgilendirme yapılacaktır. Toplanan veriler yalnızca araştırmanın bilimsel amaçları doğrultusunda değerlendirilecek, gizliliğin korunması için gerekli tedbirler alınacak ve kişisel verilerin işlenmesinde 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ile ilgili mevzuat hükümleri gözetilecektir.
+Bu çalışmada araştırmacılar tarafından yeni katılımcı verisi toplanmayacak, mevcut ve yayımlanmış bir veri seti kullanılacaktır.
+
+Veri setinin kullanım lisansına ve kaynak gösterme koşullarına uyulacaktır.
+
+Araştırma kapsamında:
+
+- Veri kaynağı açıkça belirtilecektir.
+- Veri setinin kullanım koşulları kontrol edilecektir.
+- Veriler araştırma amacı dışında kullanılmayacaktır.
+- Kişisel veya tanımlayıcı bilgiler varsa korunacaktır.
+- Analiz sonuçları değiştirilmeden ve tarafsız biçimde raporlanacaktır.
+- Bulguların sınırlılıkları akademik raporda açıklanacaktır.
 
 ## <u>7. Proje Aşamaları — Sprint 1</u>
 
-- [x] Google Forms anketinin hazırlanması
-- [x] Anketin önizleme üzerinden test edilmesi
+- [x] Proje konusunun belirlenmesi
 - [x] GitHub deposunun oluşturulması
-- [ ] Hipotezlerin ve araştırma sorularının son hâle getirilmesi
-- [ ] Anket sorularının hipotezlerle uyumunun kontrol edilmesi
-- [ ] Onam ve gizlilik ayarlarının son kontrolü
-- [ ] 5–10 kişiyle pilot uygulama yapılması
-- [ ] Pilot geri bildirimlerine göre gerekli düzeltmelerin yapılması
-- [ ] Anketin yayımlanması
-- [ ] Katılımcı yanıtlarının toplanması
-- [ ] Veri setinin oluşturulması ve analize hazırlanması
+- [x] GitHub Projects Kanban panosunun hazırlanması
+- [x] Hazır veri seti araştırmasının yapılması
+- [x] AI Tools and Technology Trends veri setinin aday olarak seçilmesi
+- [ ] Veri setinin kaynağının ve kullanım koşullarının doğrulanması
+- [ ] Veri setindeki değişkenlerin incelenmesi
+- [ ] Araştırma sorularının ve hipotezlerin son hâle getirilmesi
+- [ ] Benzer akademik çalışmaların araştırılması
+- [ ] Veri temizleme işlemlerinin yapılması
+- [ ] Analiz yöntemlerinin kesinleştirilmesi
 
-## <u>8. Ekip Çalışması</u>
+## <u>8. Proje Aşamaları — Sprint 2</u>
 
-Proje görevleri GitHub Projects üzerinden Kanban yöntemiyle takip edilecektir. Görevler ekip üyeleri arasında paylaştırılacak ve ilerleme düzenli olarak güncellenecektir.
+- [ ] Veri setinin Excel veya Google Sheets ortamına aktarılması
+- [ ] Frekans ve yüzde tablolarının oluşturulması
+- [ ] Pivot ve çapraz tabloların hazırlanması
+- [ ] Veri görselleştirmelerinin yapılması
+- [ ] Hipotezlerin uygun istatistiksel yöntemlerle test edilmesi
+- [ ] Analiz sonuçlarının yorumlanması
 
-## <u>9. Kullanılan Araçlar</u>
+## <u>9. Proje Aşamaları — Sprint 3</u>
 
-- Google Forms
-- Google Sheets
+- [ ] Bulguların akademik rapora aktarılması
+- [ ] Araştırmanın sınırlılıklarının değerlendirilmesi
+- [ ] LaTeX ile proje raporunun hazırlanması
+- [ ] Kaynakçanın düzenlenmesi
+- [ ] Proje sunumunun hazırlanması
+- [ ] Son kontrollerin yapılması
+
+## <u>10. Ekip Çalışması</u>
+
+Proje görevleri GitHub Projects üzerinden **Kanban yöntemiyle** takip edilecektir.
+
+Ekip üyeleri görev paylaşımı yaparak veri analizi, literatür araştırması, grafik hazırlama ve raporlama aşamalarında birlikte çalışacaktır.
+
+Proje ilerlemesi düzenli olarak GitHub üzerinden güncellenecektir.
+
+## <u>11. Kullanılan ve Planlanan Araçlar</u>
+
 - GitHub
 - GitHub Projects
+- Google Sheets
+- Mendeley Data
+- LaTeX / Overleaf (akademik raporlama)
+
+## <u>12. Beklenen Çıktılar</u>
+
+Proje sonunda aşağıdaki çıktıların elde edilmesi hedeflenmektedir:
+
+- Temizlenmiş ve analize hazırlanmış veri seti
+- Tanımlayıcı istatistik tabloları
+- Yapay zekâ kullanım alışkanlıklarını gösteren grafikler
+- Hipotez testlerinin sonuçları
+- Bulguların akademik değerlendirmesi
+- LaTeX formatında araştırma raporu
+- Proje sunumu
+
+---
+
+**Proje Durumu:** Veri seti değerlendirme ve araştırma planlama aşaması.
+
+**Araştırma Alanı:** Yapay Zekâ, Veri Analizi ve Kullanıcı Davranışları.
