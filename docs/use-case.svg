@@ -1,12 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="770" viewBox="0 0 1100 770" role="img" aria-label="Yapay Zeka Veri Analizi Sureci UML Use Case Diyagrami">
-<rect width="1100" height="770" fill="#ffffff"/>
-<rect x="310" y="45" width="750" height="675" rx="6" fill="#f8fbff" stroke="#26384d" stroke-width="2.5"/>
-<text x="685" y="85" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="bold" fill="#172b45">Yapay Zekâ Veri Analizi Süreci</text>
-<g stroke="#26384d" stroke-width="4" fill="none" stroke-linecap="round"><circle cx="140" cy="333" r="24"/><path d="M140 357 V445 M95 390 H185 M140 445 L94 512 M140 445 L186 512"/></g>
-<text x="140" y="548" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="bold" fill="#172b45">Araştırmacı</text>
-<g stroke="#61748c" stroke-width="2.5" fill="none"><path d="M190 390 L435 160"/><path d="M190 390 L435 262"/><path d="M190 390 L435 364"/><path d="M190 390 L435 466"/><path d="M190 390 L435 568"/><path d="M190 390 L435 670"/></g>
-<g font-family="Arial,sans-serif" font-size="21" text-anchor="middle" fill="#183153" stroke="#356fb2" stroke-width="2.3">
-<ellipse cx="718" cy="160" rx="280" ry="37" fill="#eaf3ff"/><ellipse cx="718" cy="262" rx="280" ry="37" fill="#eaf3ff"/><ellipse cx="718" cy="364" rx="280" ry="37" fill="#eaf3ff"/><ellipse cx="718" cy="466" rx="280" ry="37" fill="#eaf3ff"/><ellipse cx="718" cy="568" rx="280" ry="37" fill="#eaf3ff"/><ellipse cx="718" cy="670" rx="280" ry="37" fill="#eaf3ff"/>
-</g>
-<g font-family="Arial,sans-serif" font-size="21" text-anchor="middle" fill="#183153"><text x="718" y="167">UC-01: Veri setini içe aktar</text><text x="718" y="269">UC-02: Veri kalitesini kontrol et</text><text x="718" y="371">UC-03: Frekans analizi yap</text><text x="718" y="473">UC-04: Grafik oluştur</text><text x="718" y="575">UC-05: Hipotezleri test et</text><text x="718" y="677">UC-06: Bulguları raporla</text></g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="640" viewBox="0 0 1060 640" role="img" aria-labelledby="title desc">
+<title id="title">Yapay zekâ kullanım karşılaştırma uygulaması kullanım durumları</title>
+<desc id="desc">Ziyaretçi anket ve sonuç ekranlarını kullanır. Ekip referans veriyi geliştirme aşamasında hazırlar.</desc>
+<rect width="1060" height="640" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="16" fill="#172033" stroke="#233c61">
+<rect x="250" y="35" width="560" height="560" rx="8" fill="#f5f7fb"/>
+<text x="530" y="65" text-anchor="middle" stroke="none" font-weight="bold">AI kullanım karşılaştırma uygulaması</text>
+<circle cx="115" cy="220" r="16" fill="white"/>
+<path d="M115,236v48m-28,-30h56m-28,30l-24,34m24,-34l24,34" fill="none" stroke-width="2"/>
+<text x="115" y="345" text-anchor="middle" stroke="none">Ziyaretçi</text>
+<circle cx="940" cy="415" r="16" fill="white"/>
+<path d="M940,431v48m-28,-30h56m-28,30l-24,34m24,-34l24,34" fill="none" stroke-width="2"/>
+<text x="940" y="540" text-anchor="middle" stroke="none">Ekip üyesi</text>
+<ellipse cx="530" cy="115" rx="240" ry="28" fill="white"/>
+<text x="530" y="121" text-anchor="middle" stroke="none">UC-01 Kaynak ve gizliliği incele</text>
+<line x1="145" y1="255" x2="290" y2="115"/>
+<ellipse cx="530" cy="195" rx="240" ry="28" fill="white"/>
+<text x="530" y="201" text-anchor="middle" stroke="none">UC-02 Anketi doldur ve doğrula</text>
+<line x1="145" y1="255" x2="290" y2="195"/>
+<ellipse cx="530" cy="275" rx="240" ry="28" fill="white"/>
+<text x="530" y="281" text-anchor="middle" stroke="none">UC-03 Profil ve karşılaştırmayı gör</text>
+<line x1="145" y1="255" x2="290" y2="275"/>
+<ellipse cx="530" cy="355" rx="240" ry="28" fill="white"/>
+<text x="530" y="361" text-anchor="middle" stroke="none">UC-04 Düzenle veya sıfırla</text>
+<line x1="145" y1="255" x2="290" y2="355"/>
+<ellipse cx="530" cy="435" rx="240" ry="28" fill="white"/>
+<text x="530" y="441" text-anchor="middle" stroke="none">UC-05 Araştırmayı incele</text>
+<line x1="145" y1="255" x2="290" y2="435"/>
+<ellipse cx="530" cy="515" rx="240" ry="28" fill="white"/>
+<text x="530" y="521" text-anchor="middle" stroke="none">UC-06 Referans paketi hazırla</text>
+<line x1="910" y1="450" x2="770" y2="515"/>
+</g></svg>
