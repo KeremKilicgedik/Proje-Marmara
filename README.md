@@ -1,91 +1,75 @@
-# Yapay Zekâ Kullanım Profili ve Veri Karşılaştırma Uygulaması
+# Kullanım Atlası — Proje Marmara
 
-**Marmara Üniversitesi · Yazılım Mühendisliği Temelleri · Dört kişilik grup projesi**
+**Marmara Üniversitesi · Yazılım Mühendisliği Temelleri**
 
-Kullanıcı kısa bir anket doldurur. Uygulama, yanıtlarını Mendeley veri setindeki karşılaştırılabilir katılımcı gruplarıyla eşleştirir; kullanım örüntüsünü, grup karşılaştırmasını ve amacına uygun genel önerileri gösterir.
+Kullanıcı kısa bir anket doldurur. Uygulama yanıtlarını Mendeley anketinde aynı sıklıkta AI kullandığını belirten katılımcılarla karşılaştırır. Kullanım özeti, gerçek kişi sayıları, oranlar ve ayrı bir genel öneri gösterir. Yanıtları kaydetmez.
 
-Test akışı kolay anlaşılırdır. Sonuç bir kişilik testi, zekâ ölçümü veya doğrulanmış psikolojik sınıflandırma değildir. Profil başlığı, açık kurallara göre oluşturulan bir kullanım özetidir.
+**Pazartesi hedefimiz:** Bitmiş ürün teslimi değil; 12–15 dakika ve soru-cevapta araştırma, tasarım, Git/GitHub, Kanban ve çalışan başlangıç prototipini göstermek. Hedef oturum 2 Kasım 2026 Pazartesi. Dönem sonu geliştirmeleri ayrıca takip edilir.
 
-## Kullanıcı akışı
+## Uygulamayı açma
 
-1. Kullanıcı veri kaynağını, karşılaştırmanın sınırlarını ve gizlilik bilgisini okur.
-2. Veri setindeki seçeneklerle eşleştirilen kısa anketi doldurur.
-3. Uygulama yanıtları yalnızca tarayıcı belleğinde değerlendirir.
-4. Önceden belirlenmiş karşılaştırma ölçütüyle referans grubu bulur.
-5. Profil özeti, karşılaştırılan grubun büyüklüğü ve oranları gösterilir.
-6. Yeterli karşılaştırılabilir kayıt yoksa yüzde yerine açıklama gösterilir.
-7. Kullanıcı yanıtlarını düzenleyebilir veya testi sıfırlayabilir.
+**En kolay demo:** demo.html dosyasını çift tıklayın. Gerçek toplu veri ve kod tek dosyada bulunur; sunucu gerekmez. Geliştirme kaynakları src/ ve assets/ altında tutulur.
 
-## Ekranlar
+**Modüler geliştirme:** Python 3 ile proje klasöründe:
 
-| Ekran | İçerik |
+```bash
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Tarayıcıda http://127.0.0.1:8000 adresini açın. Sunucuyu Ctrl+C ile durdurun. `index.html` dosyasını çift tıklamayın; JavaScript modülleri yerel HTTP sunucusu gerektirir. Sunucu anket yanıtı almaz; yalnız statik dosya sunar.
+
+Uygulama yalnız HTML, CSS ve JavaScript kullanır. Node.js yalnız testler için gereklidir:
+
+```bash
+node --test tests/engine.test.js tests/privacy.test.js
+```
+
+## Ekip ve gerçek sorumluluklar
+
+| Üye | Sorumluluk |
 |---|---|
-| Başlangıç ve anket | Kaynak, gizlilik, kullanım sıklığı/amacı, araçlar ve uygun diğer sorular |
-| Kişisel sonuç | Yanıtlara dayanan kullanım özeti, grup n değeri, karşılaştırmalar, öneriler |
-| Araştırma | Toplu dağılımlar, hipotez analizleri, yöntem ve sınırlılıklar |
+| Kerem | Proje koordinasyonu, veri analizi ve GitHub takibi |
+| Seyfettin | Uygulama geliştirme ve pazartesi sunumu |
+| Suhayb | Umut ile proje tanıtım slaytları |
+| Umut | Suhayb ile proje tanıtım slaytları |
 
-## Bilimsel temel
+Bu başlangıç kodu ve belge düzeni Codex desteğiyle hazırlanmıştır. Seyfettin'in görevi kodu anlayarak incelemek, geliştirmek ve kendi yaptığı değişiklikleri gerçek commitlerle kaydetmektir. Katkı geçmişi geriye dönük olarak uydurulmaz.
 
-Araştırma katmanı; kullanım sıklığı, amaç, araçlar ve endişeler arasındaki ilişkileri inceler. Uygun olduğunda çapraz tablolar, ki-kare testleri ve etki büyüklüğü kullanılır. Çoklu seçimler ayrı ikili değişkenler olarak ele alınır.
+## Ne çalışıyor?
 
-Kullanıcıya gösterilen karşılaştırmalar betimseldir. Araştırmadaki anlamlı bir ilişki, bireysel profilin doğrulandığı veya kişinin gelecekteki davranışının tahmin edildiği anlamına gelmez. Kaynak örneklem tüm topluma genellenmez. Ayrıntı: [Bilimsel yöntem](docs/bilimsel-yontem.md).
+- Gerçek veri seçeneklerine bağlı kısa anket; kullanmayanlar için daha kısa akış.
+- Aynı kullanım sıklığına göre kişi tabanlı karşılaştırma ve düzenlenebilir yanıtlar.
+- Kaynak ve paydası açık sonuç ekranı; veri yetersizse yüzde göstermeme kontrolü.
+- Üç araştırma hipotezi, gerçek sayımlar ve duyarlılık analizi.
+- Tarayıcı belleğinde işleme; yanıtlar ağa, URL'ye veya kalıcı depolamaya yazılmaz.
+- On hesaplama ve kaynak kodu gizlilik testi; ayrıca üç istatistik fonksiyonu kontrolü. Gerçek tarayıcıdaki görsel ve gizlilik kontrollerinin durumu sunum rehberinde yazılıdır.
 
-## Veri kaynağı
+## Veri ve bilimsel sınırlar
 
-- **AI Tools and Technology Trends**, Abhijeet Kumar, Mendeley Data, sürüm 1.
-- Kaynak: https://data.mendeley.com/datasets/wphjf9t7bv/1
-- DOI: https://doi.org/10.17632/wphjf9t7bv.1
-- Kaynak sayfasındaki lisans: **CC BY 4.0**. Atıf, sürüm ve yapılan değişiklikler korunmalıdır.
-- Önceki proje kayıtlarında 1.481 yanıt ve 8 araştırma değişkeni bildirilmiştir. Ham veri bu depoda bulunmadığından bu sayılar bu güncellemede yeniden doğrulanmamıştır.
-- Önceki eksik veri/tutarsızlık kontrolleri [veri sözlüğünde](docs/veri-sozlugu.md) tarihsel kayıt olarak ayrılmıştır. Uygulamaya veri eklenmeden önce tekrar doğrulanacaktır.
+Kaynak: [AI Tools and Technology Trends — Abhijeet Kumar, Mendeley Data v1](https://data.mendeley.com/datasets/wphjf9t7bv/1), DOI: 10.17632/wphjf9t7bv.1, **CC BY 4.0**.
 
-Bu projede Mendeley kaynağı kullanılacaktır. Epoch analizleri bu deponun araştırma sonuçları değildir.
+Yüklenen CSV'de **1.481 yanıt, 8 dolu soru sütunu ve 1 tamamen boş sütun** doğrulandı. Sekiz soru alanında boş yanıt yoktur. Tarayıcıya ham katılımcı satırları yerine kaynak atfı ve Türkçe eşlemeler içeren toplu sayımlar verilir. CSV'nin SHA-256 özeti veri paketine kaydedilmiştir.
 
-## Gizlilik tasarımı
+Kullanım profili kişilik veya başarı testi değildir; yalnız kişinin yanıtlarının özetidir. Karşılaştırma örneklemle sınırlıdır; genelleme ve neden-sonuç iddiası yoktur. Öneriler elle yazılmış genel rehberliktir. Araştırma analizleri, yeni bir kişinin profilini bilimsel olarak doğrulamaz.
 
-Anket yanıtları yalnızca tarayıcı belleğinde işlenir. Yanıtları sunucuya gönderme, veritabanına yazma, localStorage/sessionStorage/IndexedDB/çerez ile saklama, URL'ye ekleme veya analitik/hata raporlama servisine aktarma yapılmaz. Yenileme ve yeniden başlatma yanıtları temizler; geri/ileri önbelleği de test edilecektir.
+## Dosya düzeni
 
-Statik barındırma sağlayıcısı sayfa istekleri için IP/erişim kaydı tutabilir. Bu yüzden “hiçbir veri işlenmez” vaadi yerine **“anket yanıtlarınız uygulama tarafından kaydedilmez veya sunucuya gönderilmez”** ifadesi kullanılır. [Gizlilik ve testler](docs/gizlilik.md).
+```text
+index.html               Anket, sonuç ve araştırma ekranları
+assets/style.css         Mobil uyumlu görünüm
+src/app.js               Ekran ve anket yönetimi
+src/engine.js            Doğrulama ve karşılaştırma kuralları
+data/reference.js        Gerçek veriden üretilmiş toplu referans ve analiz
+scripts/prepare_data.py  CSV'den referans veriyi yeniden üretme
+tests/engine.test.js     Hesaplama ve hata senaryoları
+docs/                    Aşağıdaki dört ana belge ve UML görseli
+```
 
-## Teknik plan ve mevcut durum
+## Dört ana belge
 
-Önerilen ilk sürüm: HTML, CSS ve JavaScript ile statik web uygulaması. Karşılaştırma motoru ve öneri kuralları tarayıcıda çalışır. Kaynak veri, lisans ve içerik incelemesinden sonra kimlik bilgisi içermeyen gerekli alanlar veya toplu karşılaştırma tabloları olarak hazırlanır. Harici AI servisi ve model eğitimi gerekmez.
+1. [Gereksinimler](docs/gereksinim-analizi.md) — işlevler ve kabul ölçütleri.
+2. [Tasarım ve UML](docs/tasarim.md) — UC açıklamaları, activity ve class diyagramları.
+3. [Veri ve bilimsel yöntem](docs/veri-ve-yontem.md) — kaynak, temizleme, hipotezler, karşılaştırma, gizlilik.
+4. [Sunum ve çalışma rehberi](docs/sunum-rehberi.md) — ekip, Kanban, Git gösterimi, 12–15 dakika akışı ve olası sorular.
 
-**Şu an depoda uygulama kodu ve doğrulanmış veri paketi yoktur.** Bu güncelleme proje kapsamını, gereksinimleri, tasarımı ve geliştirme planını hazırlamaktadır. Çalıştırma komutu veya canlı demo henüz yoktur.
-
-| İş | Durum |
-|---|---|
-| Yeni kapsam ve bilimsel/gizlilik kuralları | Belgelendi |
-| Gereksinimler ve UML tasarımı | Belgelendi; uygulamayla doğrulanacak |
-| Ham veri, seçenek eşleme ve temizleme | Bekliyor |
-| Anket, sonuç ve araştırma ekranları | Bekliyor |
-| Karşılaştırma motoru ve öneriler | Bekliyor |
-| Hipotez testleri ve grafikler | Bekliyor |
-| Tarayıcı/gizlilik testleri ve demo | Bekliyor |
-
-## Ekip ve sunum
-
-| Sorumluluk | Kapsam |
-|---|---|
-| Üye 1 — Arayüz | Anket, doğrulama, klavye ve mobil kullanım |
-| Üye 2 — Veri | Veri kontrolü, kategori eşleme, araştırma analizleri |
-| Üye 3 — Motor | Profil kuralları, referans grubu ve öneriler |
-| Üye 4 — Sonuç ve test | Sonuç ekranı, entegrasyon, gizlilik testleri ve demo |
-
-Gerçek isimler ve GitHub atamaları ekip tarafından eşleştirilecek; katkılar gerçek commit ve görev kayıtlarıyla izlenecektir. Hedef sunum: **2 Kasım 2026 Pazartesi** (önceki görüşmedeki pazartesi hedefi esas alınmıştır).
-
-## Belgeler
-
-- [Gereksinim analizi](docs/gereksinim-analizi.md)
-- [Kullanım durumları ve UML](docs/use-case.md)
-- [Faaliyet akışı](docs/activity.md)
-- [Mimari ve sınıf modeli](docs/mimari.md)
-- [Bilimsel yöntem ve hipotezler](docs/bilimsel-yontem.md)
-- [Veri sözlüğü ve doğrulama](docs/veri-sozlugu.md)
-- [Gizlilik](docs/gizlilik.md)
-- [Örnek sonuç ekranı](docs/ornek-sonuc.md)
-- [Görevler ve kabul ölçütleri](docs/gorev-plani.md)
-- [Sunum akışı](docs/sunum-plani.md)
-- [Kapsam değişikliği](docs/degisiklik-kaydi.md)
-
-GitHub Issues ve Projects görevleri bu kapsamla uyumlu tutulacaktır. Tamamlanmayan işler tamamlandı olarak işaretlenmez; eski commit geçmişi korunur.
+GitHub'a dosya yüklerken klasörleri düzleştirmeyin; `docs/`, `src/` ve `.github/` yapısını koruyun. Issues ve Projects çevrim içi görevleri yerel belgelerle otomatik değişmez; canlı panodaki durum ayrıca doğrulanmalıdır.
