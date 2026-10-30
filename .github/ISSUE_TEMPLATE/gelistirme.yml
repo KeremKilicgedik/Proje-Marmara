@@ -1,0 +1,23 @@
+name: Geliştirme görevi
+description: Yeni kapsam için izlenebilir bir uygulama veya analiz işi
+title: "[Görev] "
+body:
+  - type: textarea
+    id: amac
+    attributes:
+      label: Amaç ve kapsam
+      description: İlgili F/NF gereksinim kodunu ekleyin.
+    validations:
+      required: true
+  - type: textarea
+    id: kabul
+    attributes:
+      label: Kabul ölçütleri
+      description: Tamamlandığını hangi somut sonuçla doğrulayacağız?
+    validations:
+      required: true
+  - type: textarea
+    id: kanit
+    attributes:
+      label: Kontrol sonucu ve bağımlılıklar
+      description: Test, veri kaynağı, ilgili PR ve beklenen diğer işler.
