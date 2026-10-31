@@ -10,7 +10,7 @@ Pazartesi oturumu dönem sonu teslimi değildir. Hedef, 12–15 dakikada yapıla
 | Seyfettin | Uygulama kodunu inceleme/geliştirme, pazartesi sunumu |
 | Suhayb ve Umut | Birlikte tanıtım ve süreç slaytları; okunabilir görseller |
 
-Kod başlangıcı ve belge düzeni Codex desteğiyle hazırlanmıştır. Ekip her kısmı anlamalı ve gerçek değişikliklerini kendi katkıları olarak kaydetmelidir; tamamlanmamış işler veya AI desteğiyle hazırlanmış başlangıçlar kişisel katkı gibi uydurulmamalıdır.
+Başlangıç kodunu ve belgeleri Codex desteğiyle hazırladık. Sunumdan önce herkes kendi bölümünü inceleyip açıklayabilecek. Katkıları gerçek değişikliklerle kaydedeceğiz.
 
 ## 14 dakikalık akış
 
@@ -25,13 +25,35 @@ Kod başlangıcı ve belge düzeni Codex desteğiyle hazırlanmıştır. Ekip he
 | 11:30–12:45 | Problemler ve çözümler | Yanlış payda, 86/88 ayrımı, seyrek hücreler, klasör yükleme |
 | 12:45–14:00 | Test ve sonraki aşamalar | Gerçek test çıktısı, açık görevler, dönem sonu hedefi |
 
-Sunum PowerPoint üzerinden yapılacak. Suhayb ve Umut'tan son durum dönüşü bekleniyor. Ekran kaydı zorunlu değil; canlı gösterim kullanılabilir. Slaytlar konuşma metniyle doldurulmaz. Kod/diyagram ekranda okunabilir büyüklükte gösterilir. Ekran kaydı kullanılacaksa her kayıt 20–40 saniye ve tek amaca odaklı olmalı; sunumdan önce açıldığı kontrol edilmelidir.
+Sunum PowerPoint üzerinden yapılacak. Suhayb ve Umut'un slaytlarının son durumu bekleniyor. Ayrıca konuşma notları olan bir PowerPoint prototipi hazırlandı; ekipçe gözden geçirilecek. Ekran kaydı zorunlu değil; canlı gösterim kullanılabilir. Slaytlar konuşma metniyle doldurulmaz. Kod/diyagram ekranda okunabilir büyüklükte gösterilir. Ekran kaydı kullanılacaksa her kayıt 20–40 saniye ve tek amaca odaklı olmalı; sunumdan önce açıldığı kontrol edilmelidir.
 
 ## Geliştirme yaklaşımı
 
-**Artımlı geliştirme ve Kanban** seçildi: önce veri/kurallar, sonra anket–sonuç akışı, sonra araştırma ve testler. Dört kişilik ekip için küçük, kabul ölçütü açık işler takip edilebilir. Düzenli sprint toplantıları ve Scrum rolleri uygulanmadığı sürece “Scrum yaptık” denmez.
+**Çevik (Agile) yaklaşımı esas alarak artımlı geliştirme yapıyoruz. Görevleri Kanban ile takip ediyoruz.** Önce veri ve kuralları, sonra anket ve sonuç ekranlarını hazırladık. Testlerde ve incelemelerde gördüğümüz hatalara göre düzenleme yaptık.
+
+- **Çevik:** Geri bildirime göre işi gözden geçirme yaklaşımımız.
+- **Artımlı:** Uygulamaya küçük parçalar hâlinde özellik eklememiz.
+- **Yinelemeli:** Hazır bölümleri test edip düzeltmemiz.
+- **Kanban:** Görevlerin durumunu panoda takip etmemiz.
+
+Scrum rolleri ve düzenli sprint uygulamadığımız için “Scrum kullandık” demiyoruz.
 
 ## Kanban için görevler
+
+### Araştırma ve geliştirme planı slaydına yazılacaklar
+
+**Araştırma bulgusu**
+
+- Mendeley Data, AI Tools and Technology Trends: 1.481 yanıtlık veri setini inceledik. Anket seçeneklerini ve karşılaştırmaları bu veriye dayandırdık.
+- Stack Overflow Developer Survey 2025, AI bölümü: Kullanım ve çıktıya güven ayrı başlıklarda ele alınıyor. Kendi araştırmamızda da kullanım sıklığı, amaç, araç ve endişeyi ayrı değişkenler olarak inceliyoruz. İki araştırmanın verilerini birleştirmiyoruz.
+
+**Çalışma yaklaşımı**
+
+- Yaklaşım: Çevik yaklaşım doğrultusunda artımlı geliştirme, Kanban ile görev takibi.
+- Gerekçe: Kapsamı geliştikçe netleştirmek, işleri küçük parçalara ayırmak ve test sonuçlarına göre düzenlemek.
+- Döngü: Planlama, geliştirme, test ve inceleme, düzenleme.
+
+**Aşamalar:** Veri ve gereksinim analizi, UML tasarımı, anket ve karşılaştırma prototipi, test ve düzeltmeler, sunum provası. Mobil/klavye kontrolü ve sunum provası henüz açık işler. Gerçekleşmeyen aşamalara tamamlandı yazmayın.
 
 To Do / In Progress / Done. Aşağıdaki durumlar yerel çalışma kanıtını belirtir; GitHub Issues/Projects'in güncellendiği anlamına gelmez.
 
@@ -47,6 +69,35 @@ To Do / In Progress / Done. Aşağıdaki durumlar yerel çalışma kanıtını b
 | Kaynak ve benzer çalışma özeti | Kerem; slayt desteği Suhayb/Umut | Kısa not hazır | veri-ve-yontem.md: Mendeley ve Stack Overflow karşılaştırması |
 
 Done'a yalnız kanıtla geçilir. Eski görev/commit geçmişi silinmez. Geçersiz kapsam açık gerekçeyle kapatılır.
+
+## GitHub'da nereleri açacağız?
+
+Her dosyayı sırayla okumamız gerekmiyor. Aşağıdaki yerleri kısa örneklerle göstereceğiz.
+
+| Açılacak yer | Söyleyeceğimiz açıklama |
+|---|---|
+| README | “Amacımız, ekip görevleri ve uygulamayı açma bilgileri burada.” |
+| docs/gereksinim-analizi.md | “Uygulamanın ne yapması gerektiğini ve kontrolünü yazdık.” |
+| docs/tasarim.md | “Kullanıcı işlemlerini, işlem sırasını ve veri yapılarını üç UML diyagramıyla gösterdik.” |
+| docs/veri-ve-yontem.md | “Veri kaynağını ve üç araştırma sorusunun sonucunu açıkladık.” |
+| src/app.js | “Anketi ve ekranları yönetiyor.” |
+| src/engine.js | “Yanıtları doğruluyor ve karşılaştırmayı hesaplıyor.” |
+| data/reference.js | “Hazır veri setinden ürettiğimiz toplu sayımlar burada.” |
+| tests/ | “Hesaplama ve temizleme kurallarını kontrol ediyoruz.” |
+
+Ardından dosyalardan çıkıp süreç kanıtlarını açacağız:
+
+1. [Issue #3](https://github.com/KeremKilicgedik/Proje-Marmara/issues/3): görev açıklaması ve kabul kutuları. Henüz yapılmayan bir kontrolü tamamlandı göstermeyin.
+2. [Kanban panosu](https://github.com/users/KeremKilicgedik/projects/1): yapılacak, devam eden ve biten görevler. Sadece gerçekten durumu değişen işi taşıyın.
+3. [Commit geçmişi](https://github.com/KeremKilicgedik/Proje-Marmara/commits/main/): bir commit'i açıp dosya farkını açıklayın. Örneğin bu belgeleri sadeleştiren commit veya sunum provasında yaptığınız gerçek değişiklik kullanılabilir.
+
+**Son olarak:** VS Code'da gerçek Git işlemlerini ve `demo.html` ile çalışan anketi gösterin. Dosya tanıtımı tek başına uygulamalı gösterimin yerini tutmaz.
+
+## Hipotezleri sözlü anlatma
+
+“Sık kullananlarla daha az kullananların amaçları farklı mı? Farklı amaçların araç tercihleri farklı mı? Sıklığa göre endişeler farklı mı? Hazır veri setinde bu üç soruyu araştırdık.”
+
+H1 tüm örneklemde anlamlı, güncel kullanıcılarla yapılan ek analizde değil. H2'de ilişki bulduk. H3'te yeterli kanıt bulamadık. Ayrıntı sorulursa veri ve yöntem belgesindeki hesaplama bölümünü açın. Bu analizlerin bireysel profil için doğrulama olmadığını belirtin.
 
 ## Git ve VS Code gösterimi
 

@@ -7,17 +7,33 @@ UC, Use Case kısaltmasıdır: bir aktörün sistemle ne yaptığını anlatır.
 | UC | Aktör | Eylem | İlgili gereksinim |
 |---|---|---|---|
 | UC-01 | Ziyaretçi | Kaynak ve gizlilik bilgisini okur | NF1, NF4 |
-| UC-02 | Ziyaretçi | Anketi doldurur ve yanıtını düzeltir | F1 |
+| UC-02 | Ziyaretçi | Anketi doldurur, yanıtlarını kontrol eder | F1 |
 | UC-03 | Ziyaretçi | Kullanım özeti, karşılaştırma ve öneriyi görür | F2–F5 |
-| UC-04 | Ziyaretçi | Temiz bir anketle yeniden başlar | F6 |
+| UC-04 | Ziyaretçi | Yeni ankete başlar | F6 |
 | UC-05 | Ziyaretçi | Araştırma sonuçlarını inceler | F7 |
-| UC-06 | Ekip | Kaynak veriyi uygulama için hazırlar | NF4 |
+
 
 ![Use Case diyagramı](use-case.svg)
 
-Ekip aktörü canlı kullanıcı yanıtlarına erişmez; veri hazırlama geliştirme aşamasında yapılır.
+Diyagramda beş ziyaretçi işlemi var. Referans paketi hazırlamayı ayrı gösteriyoruz çünkü bunu uygulamayı geliştirirken ekip yapıyor. Ekip, canlı kullanıcı yanıtlarına erişmiyor.
 
-## Activity: uygulamanın iş akışı
+### Kısa kullanım senaryoları
+
+| İşlem | Normal akış | Alternatif durum |
+|---|---|---|
+| UC-01 Kaynak ve gizlilik | Ziyaretçi kaynak ve gizlilik açıklamasını okur. | Kaynak bağlantısını açabilir. Bağlantıya geçiş önceki yanıt/sonucu temizler. |
+| UC-02 Anket | Seçenekleri işaretler. Anket sırasında önceki soruya dönüp seçimini değiştirebilir. | Boş veya uyumsuz yanıt varsa uyarı görür. Hiç kullanmayanlara güncel araç/amaç soruları zorlanmaz. |
+| UC-03 Sonuç | Kullanım özeti, aynı sıklık grubunun dağılımı ve ayrı genel öneri görünür. | Geçerli grup 30 kişiden küçükse yüzde gösterilmez. |
+| UC-04 Yeni anket | Ankete döner ve boş başlangıç görür. | Önceki sonuçtaki seçimler geri yüklenmez. |
+| UC-05 Araştırma | Üç araştırma sorusunu, sonucu ve sınırlılıkları okur. | Bu ekrana geçiş önceki yanıt/sonucu temizler. |
+
+**Veri hazırlama:** Ekip kaynak CSV'yi kontrol eder, `scripts/prepare_data.py` ile toplu referansı üretir ve sayımları inceler. Bu geliştirme işidir. Yeni ziyaretçilerin yanıtları bu dosyaya eklenmez.
+
+**Temizleme bir kullanıcı işlemi değildir:** Kullanıcı yeni ankete başlamak ister. Belleği, formu ve sonuç ekranını kod temizler. Bu yüzden Use Case adını “Yeni ankete başla” olarak kullandık.
+
+## Activity: işlemler hangi sırayla ilerliyor?
+
+Bu diyagram anketin doldurulmasından sonuca kadar olan sırayı gösteriyor. Boş yanıt uyarısı ve yeni ankete dönüş de akışın parçası.
 
 ```mermaid
 flowchart TD
@@ -41,7 +57,9 @@ flowchart TD
     P --> N([Bitiş])
 ```
 
-## Class: mantıksal veri ilişkileri
+## Class: kodda hangi veri yapıları var?
+
+`Answers` seçimleri, `ReferenceData` toplu referansı, `ComparisonResult` hesaplanan sonucu, `Distribution` ise bir sorunun sayı ve oran dağılımını temsil ediyor.
 
 ```mermaid
 classDiagram

@@ -1,32 +1,34 @@
-# Gereksinimler
+# Gereksinim analizi
 
-Sürüm 4 · 31 Ekim 2026 · Ara değerlendirme prototipi
+Bu belge, uygulamanın ne yapması gerektiğini ve bunu nasıl kontrol edeceğimizi anlatıyor.
 
-**Problem:** Araştırmadaki AI kullanım dağılımları, kişinin kendi yanıtlarıyla ilişkilendirilebilen anlaşılır bir karşılaştırma olarak sunulmuyor.
+## Amaç ve kullanıcılar
 
-**Çözüm:** Ziyaretçi kısa anketi doldurur; tarayıcıdaki uygulama aynı sıklık grubunun verilerini gösterir. Hedef kullanıcılar AI kullanımını merak eden öğrenciler ve diğer ziyaretçilerdir. Kaynak örneklem dışındaki kişilere de arayüz açılabilir; ancak sonuçlar topluma genellenemez.
+AI kullanımını merak eden öğrenciler ve ziyaretçiler kısa anketi doldurup hazır veri setindeki aynı sıklık grubuyla karşılaştırma yapabilsin. Sonuçlar bütün toplumu temsil etmez.
 
-## Fonksiyonel gereksinimler
+## Fonksiyonel gereksinimler: uygulamanın yapacağı işler
 
-| Kod | Gereksinim | Kabul ölçütü |
+| Kod | Beklediğimiz davranış | Kontrolü |
 |---|---|---|
-| F1 | Anketi sun ve doğrula | Gerçek veri seçenekleri, boş yanıt uyarısı, geri dönme |
-| F2 | Kullanım örüntüsünü açıkla | Sıklık ve amaç yanıtı özetlenir; kişilik etiketi verilmez |
-| F3 | Referans grubuyla karşılaştır | Aynı sıklık grubunda n, pay ve yüzde gösterilir |
-| F4 | Veri yetersizliğini yönet | Geçerli n<30 için yüzde yerine açıklama gösterilir |
-| F5 | Genel öneri göster | İstatistiksel bulgudan ayrı ve genel rehberlik olarak sunulur |
-| F6 | Temizle ve yeniden başla | Sonuç hesaplandıktan sonra ham seçimler silinir. Ankete dönüş, ekran/sekme değişimi ve hata durumları önceki yanıt/sonucu temizler; yeni anket boş başlar |
-| F7 | Araştırmayı göster | Üç hipotezin yöntemi, sonucu ve sınırları görülebilir |
+| F1 | Anket sorularını gösterme ve yanıtları kontrol etme | Boş yanıtta uyarı verir. Anket sırasında önceki soruya dönülebilir. |
+| F2 | Kullanım özetini gösterme | Seçilen sıklık ve amaç açıklanır. Kişilik etiketi verilmez. |
+| F3 | Referans grubuyla karşılaştırma | Aynı sıklık grubundaki kişi sayısını, seçeneğin sayısını ve oranını gösterir. |
+| F4 | Küçük grupları açıklama | Geçerli kişi sayısı 30'dan azsa yüzde yerine açıklama gösterir. Bu bilimsel güvenilirlik sınırı değildir. |
+| F5 | Genel öneri gösterme | Öneri, araştırma sonucu gibi sunulmaz. |
+| F6 | Yeni anketi boş başlatma | Sonuçtan sonra ham seçimler silinir. Ankete dönüş, ekran/sekme değişimi ve hata durumlarında eski yanıt/sonuç temizlenir. |
+| F7 | Araştırma sonuçlarını gösterme | Üç hipotezin sorusu, sonucu ve sınırları görülebilir. |
 
-## Fonksiyonel olmayan gereksinimler
+## Fonksiyonel olmayan gereksinimler: nasıl çalışmalı?
 
-| Kod | Gereksinim | Kontrol |
+| Kod | Beklediğimiz özellik | Kontrolü |
 |---|---|---|
-| NF1 | Yanıtlar kaydedilmez veya aktarılmaz | Kaynak kodu, Network, depolama ve URL kontrolü |
-| NF2 | Sonuç tekrarlanabilirdir | Aynı yanıt, veri ve kural sürümünde aynı sonuç testi |
-| NF3 | Mobil ve klavyeyle kullanılabilir | 360 px ekran, etiketler, odak ve klavye akışı |
-| NF4 | Sayılar açıklanabilirdir | Veri sayımları, payda ve kaynak doğrulaması |
+| NF1 | Yeni yanıtları kaydetmeme ve göndermeme | Kod, ağ, depolama ve URL kontrolleri. |
+| NF2 | Aynı girdide aynı sonucu verme | Aynı yanıt, veri ve kural sürümüyle hesaplama testi. |
+| NF3 | Mobil ve klavyeyle kullanılabilme | Dar ekran ve klavye denemesi. Uygulamalı kontrol henüz açık. |
+| NF4 | Sayıların anlaşılır olması | Kaynak, kişi sayısı ve oran hesabını kontrol etme. |
 
-**İlk sürümde olmayanlar:** Üyelik, yanıt veritabanı, model eğitimi, kişilik testi, dış AI servisi ve yeni araştırma verisi toplama. Uygulamadaki form, yeni katılımcı verisi toplayan bir araştırma değildir.
+## İlk kapsam
 
-**Pazartesi kabulü:** Belgelerle kod birbiriyle tutarlı olsun; temel anket–sonuç akışı gösterilebilsin; GitHub ve Kanban gerçek ilerlemeyi yansıtsın; ekip yaptığı işleri açıklayabilsin. Ürünün %100 bitmesi beklenmiyor.
+Kullanıcı hesabı, yeni yanıt veritabanı veya dış AI servisi yok. Formu yeni araştırma verisi toplamak için kullanmıyoruz. Model eğitmiyoruz.
+
+Pazartesi için temel akışın çalışmasını, belgelerin kodla uyuşmasını ve ekibin yaptığı işi açıklayabilmesini hedefliyoruz. Kalan görevleri açıkça göstereceğiz.

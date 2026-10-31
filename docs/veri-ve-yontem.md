@@ -16,6 +16,50 @@ Başlık ve değerlerdeki dış boşluklar temizlendi. Tamamen boş sütun anali
 
 ## Üç araştırma hipotezi
 
+Bu bölümde hazır veri setindeki üç ilişkiyi araştırıyoruz. Yeni ziyaretçilerin yanıtları bu analizlere eklenmiyor.
+
+### H1 — Kullanım sıklığı ve kullanım amacı
+
+**Araştırma sorusu:** Sık kullananlarla daha az kullananların kullanım amaçları farklı dağılıyor mu?
+
+- **H₀:** Kullanım sıklığı ile kullanım amacı arasında ilişki yoktur.
+- **Alternatif hipotez:** Kullanım sıklığı ile kullanım amacı arasında ilişki vardır.
+
+Örneğin her gün kullananların amaç dağılımını nadiren kullananlarınkiyle karşılaştırıyoruz. Bu örnek, belirli bir grubun daha çok kodlama yaptığı sonucunu tek başına vermez.
+
+**Sonuç:** 1.481 kaydın tamamında ilişki bulduk. Hiç kullanmayanları ve kullanmayı bırakanları çıkarınca, kalan 1.393 kişide sonuç anlamlılık eşiğine ulaşmadı. Bu yüzden H1'i kesin bir sonuç gibi sunmuyoruz.
+
+### H2 — Kullanılan araç ve kullanım amacı
+
+**Araştırma sorusu:** Farklı amaçlarla kullananların araç tercihleri farklı dağılıyor mu?
+
+- **H₀:** Kullanılan araç ile kullanım amacı arasında ilişki yoktur.
+- **Alternatif hipotez:** Kullanılan araç ile kullanım amacı arasında ilişki vardır.
+
+Örneğin kodlama ve ders çalışma amaçlarını bildirenlerin araç dağılımlarını karşılaştırıyoruz.
+
+**Sonuç:** Bu veri setinde ilişki bulduk. Bu sonuç bir aracın diğerinden daha iyi olduğunu veya amacın araç seçimine neden olduğunu göstermez.
+
+### H3 — Kullanım sıklığı ve endişe
+
+**Araştırma sorusu:** Sık kullananlarla daha az kullananların belirttiği endişeler farklı dağılıyor mu?
+
+- **H₀:** Kullanım sıklığı ile belirtilen endişe arasında ilişki yoktur.
+- **Alternatif hipotez:** Kullanım sıklığı ile belirtilen endişe arasında ilişki vardır.
+
+**Sonuç:** Anlamlı ilişki gösterecek yeterli kanıt bulamadık. “Hiç ilişki yok” demiyoruz. Anket endişenin şiddetini değil, seçilen endişe kategorisini ölçüyor.
+
+### Tablodaki terimler ne demek?
+
+- **H₀:** Her testte değerlendirdiğimiz “ilişki yoktur” varsayımı.
+- **p değeri:** H₀ varsayımı altında, en az gözlediğimiz kadar uç bir sonucun ne ölçüde beklenebileceğini gösterir. Karar eşiğimiz 0,05. H₀'ın doğru olma olasılığı değildir.
+- **Holm düzeltmesi:** Üç test yaptığımız için yanlışlıkla ilişki bulma riskini birlikte kontrol etmekte kullandığımız düzeltme.
+- **Cramér’s V:** İlişkinin büyüklüğünü özetleyen değer. Küçük p değeri tek başına büyük ilişki anlamına gelmez.
+- **Duyarlılık analizi:** Kapsamı değiştirince sonucun değişip değişmediğini kontrol etme. H1'de bu kontrol sonucu değiştirdi.
+
+<details>
+<summary>Hesaplama ayrıntıları ve tam sonuç tablosu</summary>
+
 Her çift için H₀ ilişki olmadığı, H₁ ilişki olduğu yönündedir.
 
 | Hipotez | Karşılaştırma | Ana yöntem | Sonuç (Holm p) | Cramér’s V |
@@ -31,6 +75,8 @@ Beklenen hücrelerin en az birinin 1'in altında olması veya %20'den fazlasın�
 **H1 özellikle temkinli okunmalı:** 1.393 güncel kullanıcıyla yapılan ek analizde ham p=0,0915'tir; ana örneklemdeki ilişki bu kapsamda anlamlılık eşiğine ulaşmaz. H2 ek analizde ham p=0,0001 (permütasyon çözünürlüğü), H3'te ham p=0,2006'dır. Ek analizler keşfedicidir; ana üç testin Holm ailesine dahil değildir. V değerleri raporlanır; evrensel “güçlü/zayıf” etiketleri verilmez.
 
 H₀'ın reddedilememesi ilişkisizliğin kanıtı değildir. Test sonuçları bir kullanıcının profilini bilimsel olarak doğrulamaz.
+
+</details>
 
 ## Uygulamadaki karşılaştırma
 
