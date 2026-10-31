@@ -1,6 +1,6 @@
 # Kullanım Atlası — Proje Marmara
 
-> **31 Ekim 2026: Demo kullanım dışıdır.** Sıfırlama sonrasında gizli sonuç alanlarında metin kalabildiği doğrulandı. Kalıcı kayıt veya yanıt aktarımı bulgusu yoktur; ancak tüm tarayıcı kontrolleri tamamlanmadığından kullanıcı koşulu gereği demo durduruldu. Aşağıdaki eski çalıştırma açıklamaları aktif demo anlamına gelmez.
+> **31 Ekim 2026: Sıfırlama düzeltmesi uygulandı.** Yanıtlarla birlikte gizli sonuç alanları da temizlenir. Otomatik sıfırlama testleri eklendi. Bu kontrol, tüm tarayıcılar için hukuki veya teknik bir güvence değildir.
 
 **Marmara Üniversitesi · Yazılım Mühendisliği Temelleri**
 
