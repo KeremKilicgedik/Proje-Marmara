@@ -1,5 +1,7 @@
 # Kullanım Atlası — Proje Marmara
 
+> **31 Ekim 2026: Demo kullanım dışıdır.** Sıfırlama sonrasında gizli sonuç alanlarında metin kalabildiği doğrulandı. Kalıcı kayıt veya yanıt aktarımı bulgusu yoktur; ancak tüm tarayıcı kontrolleri tamamlanmadığından kullanıcı koşulu gereği demo durduruldu. Aşağıdaki eski çalıştırma açıklamaları aktif demo anlamına gelmez.
+
 **Marmara Üniversitesi · Yazılım Mühendisliği Temelleri**
 
 Kullanıcı kısa bir anket doldurur. Uygulama yanıtlarını Mendeley anketinde aynı sıklıkta AI kullandığını belirten katılımcılarla karşılaştırır. Kullanım özeti, gerçek kişi sayıları, oranlar ve ayrı bir genel öneri gösterir. Yanıtları kaydetmez.
