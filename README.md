@@ -30,21 +30,21 @@ node --test tests/engine.test.js tests/privacy.test.js tests/reset.test.js
 
 | Üye | Sorumluluk |
 |---|---|
-| Kerem | Proje koordinasyonu, veri analizi ve GitHub takibi |
-| Seyfettin | Uygulama geliştirme ve pazartesi sunumu |
-| Suhayb | Umut ile proje tanıtım slaytları |
-| Umut | Suhayb ile proje tanıtım slaytları |
+| Kerem (`KeremKilicgedik`) | Proje koordinasyonu, veri analizi ve GitHub takibi |
+| Seyfettin (`seyfettinokmen53-oss`) | Uygulama geliştirme ve pazartesi sunumu |
+| Suhayb (`aloushsoheb-commits`) | Umut ile proje tanıtım slaytları |
+| Umut (`Umtutu`) | Suhayb ile proje tanıtım slaytları |
 
 Bu başlangıç kodu ve belge düzeni Codex desteğiyle hazırlanmıştır. Seyfettin'in görevi kodu anlayarak incelemek, geliştirmek ve kendi yaptığı değişiklikleri gerçek commitlerle kaydetmektir. Katkı geçmişi geriye dönük olarak uydurulmaz.
 
 ## Ne çalışıyor?
 
 - Gerçek veri seçeneklerine bağlı kısa anket; kullanmayanlar için daha kısa akış.
-- Aynı kullanım sıklığına göre kişi tabanlı karşılaştırma ve düzenlenebilir yanıtlar.
+- Aynı kullanım sıklığına göre kişi tabanlı karşılaştırma; sonuçtan sonra temiz bir anketle yeniden başlama.
 - Kaynak ve paydası açık sonuç ekranı; veri yetersizse yüzde göstermeme kontrolü.
 - Üç araştırma hipotezi, gerçek sayımlar ve duyarlılık analizi.
 - Tarayıcı belleğinde işleme; yanıtlar ağa, URL'ye veya kalıcı depolamaya yazılmaz.
-- On hesaplama ve kaynak kodu gizlilik testi; ayrıca üç istatistik fonksiyonu kontrolü. Gerçek tarayıcıdaki görsel ve gizlilik kontrollerinin durumu sunum rehberinde yazılıdır.
+- 22 JavaScript hesaplama, gizlilik ve temizleme testi; ayrıca üç istatistik fonksiyonu kontrolü. Gerçek tarayıcıdaki görsel ve gizlilik kontrollerinin durumu sunum rehberinde yazılıdır.
 
 ## Veri ve bilimsel sınırlar
 
