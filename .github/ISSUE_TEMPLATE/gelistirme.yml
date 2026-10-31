@@ -1,23 +1,27 @@
-name: Geliştirme görevi
-description: Yeni kapsam için izlenebilir bir uygulama veya analiz işi
+name: Proje görevi
+description: Yapacağımız işi ve bitirme ölçütünü yazalım.
 title: "[Görev] "
 body:
   - type: textarea
-    id: amac
+    id: yapilacak
     attributes:
-      label: Amaç ve kapsam
-      description: İlgili F/NF gereksinim kodunu ekleyin.
+      label: Ne yapacağız?
+      description: İşi ve neden gerekli olduğunu kısaca yazın.
     validations:
       required: true
   - type: textarea
-    id: kabul
+    id: kontrol
     attributes:
-      label: Kabul ölçütleri
-      description: Tamamlandığını hangi somut sonuçla doğrulayacağız?
+      label: Bittiğini nasıl anlayacağız?
+      description: Deneyeceğimiz adımları veya beklenen çıktıyı yazın.
     validations:
       required: true
-  - type: textarea
-    id: kanit
+  - type: input
+    id: sorumlu
     attributes:
-      label: Kontrol sonucu ve bağımlılıklar
-      description: Test, veri kaynağı, ilgili PR ve beklenen diğer işler.
+      label: Kim ilgileniyor?
+  - type: textarea
+    id: sonuc
+    attributes:
+      label: Sonuç ve kalan işler
+      description: İş ilerledikçe kontrol sonucunu ve ilgili commit bağlantısını ekleyin.
