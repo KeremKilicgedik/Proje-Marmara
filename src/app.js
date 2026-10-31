@@ -46,6 +46,8 @@ function renderResult() {
     }
     $('comparison').append(section);
   }
+  // Sonuç ekranda kalır; ham seçimler ve gizli form artık gerekli değildir.
+  answers = {}; step = 0; $('survey').reset(); $('options').replaceChildren();
   view('result-view'); $('result-title').focus();
 }
 function renderResearch() {
@@ -80,14 +82,16 @@ $('survey').addEventListener('submit', event => {
   if (key === 'tool' && input.value === "I don't use any AI tools") { $('form-error').textContent = 'Sıklık yanıtın güncel kullanımı belirtiyor. Kullanmıyorsan Geri ile sıklığını değiştir; kullanıyorsan bir araç seç.'; return; }
   answers[key] = input.value;
   if (key === 'frequency' && NONUSE.has(input.value)) { delete answers.tool; delete answers.purpose; }
-  if (step < path().length - 1) { step++; drawQuestion(); } else { try { renderResult(); } catch { $('form-error').textContent = 'Karşılaştırma hazırlanamadı. Yanıtlarını veya referans veriyi kontrol et.'; } }
+  if (step < path().length - 1) { step++; drawQuestion(); } else { try { renderResult(); } catch { reset(); $('form-error').textContent = 'Karşılaştırma hazırlanamadı. Yanıtlar temizlendi; yeniden başlayabilirsin.'; } }
 });
 $('back').addEventListener('click', () => { const input = $('options').querySelector('input:checked'); if (input) answers[path()[step]] = input.value; step--; drawQuestion(); });
-$('edit').addEventListener('click', () => { step = 0; clearResult(); view('survey-view'); drawQuestion(); });
+$('edit').addEventListener('click', reset);
 $('reset').addEventListener('click', reset);
-$('nav-survey').addEventListener('click', () => { view('survey-view'); drawQuestion(); });
-$('nav-research').addEventListener('click', () => { view('research-view'); $('research-title').focus(); });
-$('home-link').addEventListener('click', event => { event.preventDefault(); view('survey-view'); drawQuestion(); });
+$('nav-survey').addEventListener('click', reset);
+$('nav-research').addEventListener('click', () => { reset(); view('research-view'); $('research-title').focus(); });
+$('home-link').addEventListener('click', event => { event.preventDefault(); reset(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) reset(); });
+document.addEventListener('click', event => { const link = event.target.closest?.('a'); if (link && link.id !== 'home-link') reset(); });
 window.addEventListener('pageshow', reset);
 window.addEventListener('pagehide', () => { reset(); });
 try { data = (await import('../data/reference.js')).default; renderResearch(); reset(); }
