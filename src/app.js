@@ -60,7 +60,20 @@ function renderResearch() {
   });
   $('audit-note').textContent = `Dosyada sıklığını “hiç” veya “bıraktım” olarak belirten ${data.audit.nonuseFrequency}, araç kullanmadığını belirten ${data.audit.noTool} kişi var. Bunlar aynı tanım değildir. Ana analizde kayıtlar korundu; ${data.audit.activeCount} güncel kullanıcıyla duyarlılık kontrolü yapıldı. Tamamen boş bir sütun analize alınmadı.`;
 }
-function reset() { answers = {}; step = 0; $('survey').reset(); $('comparison').replaceChildren(); $('profile').textContent = ''; view('survey-view'); if (data) drawQuestion(false); }
+function clearResult() {
+  $('comparison').replaceChildren();
+  for (const id of ['profile', 'group-n', 'guidance-text']) $(id).textContent = '';
+}
+function reset() {
+  answers = {};
+  step = 0;
+  $('survey').reset();
+  $('options').replaceChildren();
+  clearResult();
+  $('form-error').textContent = '';
+  view('survey-view');
+  if (data) drawQuestion(false);
+}
 $('survey').addEventListener('submit', event => {
   event.preventDefault(); const key = path()[step]; const input = $('options').querySelector('input:checked');
   if (!input) { $('form-error').textContent = 'Devam etmek için bir yanıt seç.'; return; }
@@ -70,12 +83,12 @@ $('survey').addEventListener('submit', event => {
   if (step < path().length - 1) { step++; drawQuestion(); } else { try { renderResult(); } catch { $('form-error').textContent = 'Karşılaştırma hazırlanamadı. Yanıtlarını veya referans veriyi kontrol et.'; } }
 });
 $('back').addEventListener('click', () => { const input = $('options').querySelector('input:checked'); if (input) answers[path()[step]] = input.value; step--; drawQuestion(); });
-$('edit').addEventListener('click', () => { step = 0; view('survey-view'); drawQuestion(); });
+$('edit').addEventListener('click', () => { step = 0; clearResult(); view('survey-view'); drawQuestion(); });
 $('reset').addEventListener('click', reset);
 $('nav-survey').addEventListener('click', () => { view('survey-view'); drawQuestion(); });
 $('nav-research').addEventListener('click', () => { view('research-view'); $('research-title').focus(); });
 $('home-link').addEventListener('click', event => { event.preventDefault(); view('survey-view'); drawQuestion(); });
-window.addEventListener('pageshow', event => { if (event.persisted) reset(); });
+window.addEventListener('pageshow', reset);
 window.addEventListener('pagehide', () => { reset(); });
 try { data = (await import('../data/reference.js')).default; renderResearch(); reset(); }
 catch { for (const v of views) $(v).hidden = true; $('fatal-error').hidden = false; $('fatal-error').textContent = 'Referans verisi yüklenemedi. Uygulamayı README’deki yerel sunucu komutuyla aç; dosyayı çift tıklamak yerine http adresini kullan.'; }
