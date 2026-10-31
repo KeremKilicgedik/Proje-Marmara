@@ -2,6 +2,7 @@ export const MIN_GROUP_SIZE = 30;
 export const NONUSE = new Set(['Never', "I've tried them but stopped"]);
 export const NO_TOOL = "I don't use any AI tools";
 
+// Seçenekleri kontrol et. Hiç kullanmayanlarda güncel araç ve amaç arama.
 export function validate(data, answers) {
   const errors = [];
   for (const field of ['frequency', 'concern']) {
@@ -16,6 +17,7 @@ export function validate(data, answers) {
   return [...new Set(errors)];
 }
 
+// Aynı kullanım sıklığı grubunu seç ve her sorunun oranını o grupta hesapla.
 export function compare(data, answers) {
   if (validate(data, answers).length) throw new Error('Yanıtlar eksik veya birbiriyle uyumsuz.');
   const group = data.groups[answers.frequency];
@@ -25,6 +27,7 @@ export function compare(data, answers) {
   const distributions = fields.map(field => {
     const counts = group.counts[field];
     if (!counts || Object.values(counts).some(n => !Number.isInteger(n) || n < 0)) throw new Error('Referans sayımları geçersiz.');
+    // Payda, bu sorunun gruptaki geçerli yanıt sayısıdır.
     const denominator = Object.values(counts).reduce((a, b) => a + b, 0);
     if (denominator > group.n) throw new Error('Tek seçimli soruda kişi paydası aşıldı.');
     return {

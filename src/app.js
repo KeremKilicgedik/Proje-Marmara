@@ -14,6 +14,7 @@ function view(id) {
   for (const v of views) $(v).hidden = v !== id;
   for (const [name, on] of [['nav-survey', id !== 'research-view'], ['nav-research', id === 'research-view']]) { $(name).classList.toggle('active', on); $(name).setAttribute('aria-pressed', String(on)); }
 }
+// Aktif soruyu ve seçeneklerini ekrana çiz.
 function drawQuestion(focus = true) {
   step = Math.min(step, path().length - 1); const key = path()[step];
   $('question-title').textContent = questions[key][0]; $('question-help').textContent = questions[key][1];
@@ -50,6 +51,7 @@ function renderResult() {
   answers = {}; step = 0; $('survey').reset(); $('options').replaceChildren();
   view('result-view'); $('result-title').focus();
 }
+// Hazır veri setinin analizini göster. Yeni ziyaretçinin yanıtını analize ekleme.
 function renderResearch() {
   $('sample-size').textContent = data.audit.rowCount.toLocaleString('tr-TR');
   for (const [value, label] of [[data.audit.rowCount, 'kaynak katılımcı'], [data.audit.nonemptyColumns, 'araştırma değişkeni'], [3, 'keşfedici hipotez']]) { const card = node('div', undefined, 'audit-card'); card.append(node('strong', value.toLocaleString('tr-TR')), node('span', label)); $('audit-cards').append(card); }
