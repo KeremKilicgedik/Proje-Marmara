@@ -1,6 +1,6 @@
 # Kullanım Atlası — Proje Marmara
 
-> **31 Ekim 2026: Sıfırlama düzeltmesi uygulandı.** Yanıtlarla birlikte gizli sonuç alanları da temizlenir. Otomatik sıfırlama testleri eklendi. Bu kontrol, tüm tarayıcılar için hukuki veya teknik bir güvence değildir.
+> **31 Ekim 2026: Gizlilik temizliği genişletildi.** Sonuçtan sonra ham seçimler silinir. Ekran/sekme geçişi, bağlantı açma ve hata durumları sonuçları da temizler. 22 otomatik test geçti. Bu kontrol, tüm tarayıcılar için hukuki veya teknik bir güvence değildir.
 
 **Marmara Üniversitesi · Yazılım Mühendisliği Temelleri**
 
@@ -23,7 +23,7 @@ Tarayıcıda http://127.0.0.1:8000 adresini açın. Sunucuyu Ctrl+C ile durdurun
 Uygulama yalnız HTML, CSS ve JavaScript kullanır. Node.js yalnız testler için gereklidir:
 
 ```bash
-node --test tests/engine.test.js tests/privacy.test.js
+node --test tests/engine.test.js tests/privacy.test.js tests/reset.test.js
 ```
 
 ## Ekip ve gerçek sorumluluklar
