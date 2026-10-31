@@ -1,13 +1,12 @@
-## Problem ve sonuç
+## Ne değiştirdik?
 
-Bu değişiklik hangi kullanıcı ihtiyacını karşılıyor?
+Değişikliği ve nedenini kısaca yazın.
 
-## Doğrulama
+## Nasıl kontrol ettik?
 
-- İlgili görev / FR / NFR:
-- Yapılan kontrol ve sonucu:
-- Kalan sınırlılıklar:
+Denediğiniz adımları ve sonucu yazın. Henüz denemediğiniz kısmı belirtin.
 
-## Kullanıcı yanıtları ve bilimsel içerik
+İlgili görev:
+Kalan iş:
 
-Yanıtların kalıcı depolamaya/ağa/URL'ye yazılmadığını ve karşılaştırma sayılarının kaynakla doğrulandığını, değişiklik bu alanları etkiliyorsa açıklayın.
+Hesaplamayı veya gizliliği etkiliyorsa sayıların doğruluğunu ve yanıtların kaydedilmemesini ayrıca kontrol edin.
