@@ -1,6 +1,6 @@
 # Gereksinimler
 
-Sürüm 3 · 30 Ekim 2026 · Ara değerlendirme prototipi
+Sürüm 4 · 31 Ekim 2026 · Ara değerlendirme prototipi
 
 **Problem:** Araştırmadaki AI kullanım dağılımları, kişinin kendi yanıtlarıyla ilişkilendirilebilen anlaşılır bir karşılaştırma olarak sunulmuyor.
 
@@ -15,7 +15,7 @@ Sürüm 3 · 30 Ekim 2026 · Ara değerlendirme prototipi
 | F3 | Referans grubuyla karşılaştır | Aynı sıklık grubunda n, pay ve yüzde gösterilir |
 | F4 | Veri yetersizliğini yönet | Geçerli n<30 için yüzde yerine açıklama gösterilir |
 | F5 | Genel öneri göster | İstatistiksel bulgudan ayrı ve genel rehberlik olarak sunulur |
-| F6 | Düzenle ve sıfırla | Sonuç düzenlenebilir; yeniden başlatma önceki yanıtı temizler |
+| F6 | Temizle ve yeniden başla | Sonuç hesaplandıktan sonra ham seçimler silinir. Ankete dönüş, ekran/sekme değişimi ve hata durumları önceki yanıt/sonucu temizler; yeni anket boş başlar |
 | F7 | Araştırmayı göster | Üç hipotezin yöntemi, sonucu ve sınırları görülebilir |
 
 ## Fonksiyonel olmayan gereksinimler

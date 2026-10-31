@@ -9,7 +9,7 @@ UC, Use Case kısaltmasıdır: bir aktörün sistemle ne yaptığını anlatır.
 | UC-01 | Ziyaretçi | Kaynak ve gizlilik bilgisini okur | NF1, NF4 |
 | UC-02 | Ziyaretçi | Anketi doldurur ve yanıtını düzeltir | F1 |
 | UC-03 | Ziyaretçi | Kullanım özeti, karşılaştırma ve öneriyi görür | F2–F5 |
-| UC-04 | Ziyaretçi | Yanıtı düzenler veya testi sıfırlar | F6 |
+| UC-04 | Ziyaretçi | Temiz bir anketle yeniden başlar | F6 |
 | UC-05 | Ziyaretçi | Araştırma sonuçlarını inceler | F7 |
 | UC-06 | Ekip | Kaynak veriyi uygulama için hazırlar | NF4 |
 
@@ -33,11 +33,12 @@ flowchart TD
     H -->|Hayır| J[Yetersiz veri açıklaması]
     I --> K[Genel öneri ve sınırlılıkları göster]
     J --> K
-    K --> L{Kullanıcı seçimi}
-    L -->|Düzenle| C
-    L -->|Sıfırla| M[Bellekteki yanıtları temizle]
+    K --> O[Ham yanıtları bellek ve formdan sil]
+    O --> L{Kullanıcı seçimi}
+    L -->|Ankete dön veya sıfırla| M[Yanıt ve sonuç ekranını temizle]
     M --> C
-    L -->|Çık| N([Bitiş])
+    L -->|Ekran veya sekme değişimi| P[Yanıt ve sonucu temizle]
+    P --> N([Bitiş])
 ```
 
 ## Class: mantıksal veri ilişkileri

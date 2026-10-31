@@ -21,7 +21,7 @@
 <text x="530" y="281" text-anchor="middle" stroke="none">UC-03 Profil ve karşılaştırmayı gör</text>
 <line x1="145" y1="255" x2="290" y2="275"/>
 <ellipse cx="530" cy="355" rx="240" ry="28" fill="white"/>
-<text x="530" y="361" text-anchor="middle" stroke="none">UC-04 Düzenle veya sıfırla</text>
+<text x="530" y="361" text-anchor="middle" stroke="none">UC-04 Temizle ve yeniden başla</text>
 <line x1="145" y1="255" x2="290" y2="355"/>
 <ellipse cx="530" cy="435" rx="240" ry="28" fill="white"/>
 <text x="530" y="441" text-anchor="middle" stroke="none">UC-05 Araştırmayı incele</text>

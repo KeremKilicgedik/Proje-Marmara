@@ -42,9 +42,9 @@ Profil, kişinin sıklık ve amaç yanıtının özetidir; gizli skor veya eğit
 
 ## Gizlilik
 
-Yanıtlar yalnız JavaScript belleğinde tutulur. Yanıtları sunucuya gönderme, URL/konsola yazma, çerez/localStorage/sessionStorage/IndexedDB kullanma yoktur. Harici analitik veya AI servisi yoktur. Yenileme, yeniden başlatma ve geri/ileri önbelleği dönüşünde temizleme uygulanır. `connect-src 'none'` ve `form-action 'none'` ek koruma sağlar; modül dosyaları aynı kökenden yüklenir.
+Yanıtlar yalnız JavaScript belleğinde tutulur. Yanıtları sunucuya gönderme, URL/konsola yazma, çerez/localStorage/sessionStorage/IndexedDB kullanma yoktur. Harici analitik veya AI servisi yoktur. Sonuç hesaplanıp çizildikten sonra ham seçimler ve form alanları temizlenir. Ankete dönüş, diğer uygulama ekranları, sekmenin gizlenmesi, bağlantı açma, hata, yenileme ve geri/ileri önbelleği dönüşünde sonuçlar da temizlenir. `connect-src 'none'` ve `form-action 'none'` ek koruma sağlar; modül dosyaları aynı kökenden yüklenir.
 
-Barındırma sağlayıcısı IP/erişim kayıtları tutabilir; “hiçbir veri işlenmez” denmez. Gerçek tarayıcı Network ve depolama denetimi yapılmadan gizlilik davranışının eksiksiz doğrulandığı iddia edilmez.
+Barındırma sağlayıcısı IP/erişim kayıtları tutabilir; “hiçbir veri işlenmez” denmez. Kerem, Opera GX üzerinde denediği anket–sonuç senaryosunda Network listesinin ve Local Storage, Session Storage, IndexedDB, Cookies alanlarının boş olduğunu bildirdi. Bu kullanıcı gözlemi, 22 otomatik testten ayrı kaydedilir; bütün tarayıcılar için eksiksiz doğrulama veya hukuki güvence sayılmaz.
 
 ## Yeniden üretme
 
@@ -55,3 +55,16 @@ python scripts/prepare_data.py "kaynak-dosya.csv"
 ```
 
 Bu komut `data/reference.js` dosyasını yeniden üretir. İçinde kaynak hash'i, kategori sözlüğü, grup sayımları, çapraz tablolar ve test parametreleri bulunur. Değişen veriyle testler de yeniden çalıştırılmalıdır.
+
+## İncelenen kaynaklar ve benzer çalışma
+
+31 Ekim 2026 tarihinde aşağıdaki iki birincil kaynak incelendi. Bu bölüm kısa bir araştırma notudur; kapsamlı akademik literatür taraması değildir.
+
+| Kaynak | İncelenen nokta | Projemizdeki karşılığı ve sınırı |
+|---|---|---|
+| [Kumar, AI Tools and Technology Trends, v1, 2026](https://data.mendeley.com/datasets/wphjf9t7bv/1) | Öğrencilerin AI kullanımı ve tercihleri için çevrim içi anket; açık veri ve CC BY 4.0 lisansı | Analizimizin asıl kaynağı. Kaynak sayfasının genel açıklamasına rağmen yüklenen dosyada yaş/cinsiyet bulunmadığı dosya üzerinden doğrulandı. Örneklem topluma genellenmez. |
+| [Stack Overflow Developer Survey 2025 — AI](https://survey.stackoverflow.co/2025/ai) | AI kullanımının yanında çıktıya güven ve kullanım güçlüklerini ayrı sorularla inceliyor | Kullanım ve endişenin ayrı boyutlar olarak ele alınmasına örnek. Geliştirici kitlesi ve soruları farklı olduğundan sayımları Mendeley verisiyle birleştirmiyoruz. |
+
+Stack Overflow raporunda doğruluğa güvenmeyenlerin oranı %46, güvenenlerin oranı %33 olarak veriliyor. Bu sayı bizim örneklemimizin sonucu değildir; kullanım yaygınlığı ile güvenin aynı kavram olmadığını tartışmak için dış araştırma bağlamıdır. Kaynak: yukarıdaki AI sayfasının “Accuracy of AI tools” bölümü.
+
+Bizim yazılım katkımız, hazır anket sonuçlarını göstermekle birlikte ziyaretçinin seçimine göre aynı kullanım sıklığı grubunun dağılımını hesaplayan, kaynağı ve paydayı görünür kılan bir arayüzdür. Yeni bir psikometrik ölçüm veya makine öğrenmesi modeli geliştirdiğimizi iddia etmiyoruz.

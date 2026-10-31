@@ -21,11 +21,11 @@ Kod başlangıcı ve belge düzeni Codex desteğiyle hazırlanmıştır. Ekip he
 | 2:30–5:00 | GitHub ve Kanban | Depo yapısı, gerçek Issues, durum geçişleri, commit farkı |
 | 5:00–6:30 | VS Code ve Git | Küçük gerçek değişiklik; status/add/commit/push veya kısa kayıt |
 | 6:30–8:30 | Gereksinimler ve UML | F1/NF1, Use Case, Activity, Class; koddaki karşılıkları |
-| 8:30–11:30 | Çalışan prototip | Anket, sonuç, düzeltme, kullanmayan kişi ve araştırma ekranı |
+| 8:30–11:30 | Çalışan prototip | Anket, sonuç, temiz yeniden başlangıç, kullanmayan kişi ve araştırma ekranı |
 | 11:30–12:45 | Problemler ve çözümler | Yanlış payda, 86/88 ayrımı, seyrek hücreler, klasör yükleme |
 | 12:45–14:00 | Test ve sonraki aşamalar | Gerçek test çıktısı, açık görevler, dönem sonu hedefi |
 
-Slaytlar konuşma metniyle doldurulmaz. Kod/diyagram ekranda okunabilir büyüklükte gösterilir. Ekran kaydı kullanılacaksa her kayıt 20–40 saniye ve tek amaca odaklı olmalı; sunumdan önce açıldığı kontrol edilmelidir.
+Sunum PowerPoint üzerinden yapılacak. Suhayb ve Umut'tan son durum dönüşü bekleniyor. Ekran kaydı zorunlu değil; canlı gösterim kullanılabilir. Slaytlar konuşma metniyle doldurulmaz. Kod/diyagram ekranda okunabilir büyüklükte gösterilir. Ekran kaydı kullanılacaksa her kayıt 20–40 saniye ve tek amaca odaklı olmalı; sunumdan önce açıldığı kontrol edilmelidir.
 
 ## Geliştirme yaklaşımı
 
@@ -38,12 +38,13 @@ To Do / In Progress / Done. Aşağıdaki durumlar yerel çalışma kanıtını b
 | İş | Sorumlu | Yerel durum | Tamamlanma kanıtı |
 |---|---|---|---|
 | CSV ve kategori kontrolü | Kerem | Hazır; ekip inceleyecek | Gerçek sayımlar, hash ve veri paketi |
-| Temel anket ve karşılaştırma | Seyfettin | Başlangıç kodu hazır; inceleme sürüyor | Çalışan akış ve kendi geliştirme kaydı |
+| Temel anket ve karşılaştırma | Seyfettin | Başlangıç kodu hazır; ekip incelemesi bekliyor | Çalışan akış ve kendi geliştirme kaydı |
 | Gereksinim/UML eşlemesi | Kerem + Seyfettin | Taslak hazır | Ekibin kodla eşleştirerek onayı |
-| Slaytlar | Suhayb + Umut | To Do | 12–15 dakikalık prova |
-| Tarayıcı, mobil ve gizlilik testi | Seyfettin + Kerem | To Do | Network/depolama, geri/ileri, 360 px kontrolü |
-| GitHub görev ve Kanban düzeni | Kerem | To Do | Canlı panoda gerçek kayıtlar |
-| Literatür ve benzer çalışma özeti | Kerem; slayt desteği Suhayb/Umut | To Do | En az iki okunmuş kaynağın kısa notu |
+| PowerPoint slaytları | Suhayb + Umut | Son durum dönüşü bekleniyor | Dosyanın açılması ve 12–15 dakikalık prova |
+| Opera GX ağ/depolama gözlemi | Kerem | Kullanıcı tarafından bildirildi | Denenen anket–sonuç akışında listeler boş; tüm tarayıcıları kapsamaz |
+| Mobil, klavye ve sunum bilgisayarı kontrolü | Seyfettin + Kerem | Açık | 360 px, klavye, boş yanıt, yeniden başlama ve demo açılışı |
+| GitHub görev ve Kanban düzeni | Kerem | Mevcut pano incelendi; güncelleme takibi | Canlı panoda gerçek kayıtlar; tamamlanma kanıtıyla durum değişimi |
+| Kaynak ve benzer çalışma özeti | Kerem; slayt desteği Suhayb/Umut | Kısa not hazır | veri-ve-yontem.md: Mendeley ve Stack Overflow karşılaştırması |
 
 Done'a yalnız kanıtla geçilir. Eski görev/commit geçmişi silinmez. Geçersiz kapsam açık gerekçeyle kapatılır.
 
@@ -92,7 +93,7 @@ Push için ekip üyesinin GitHub oturumu ve doğru branch/uzak depo bağlantıs�
 
 **Bütün insanlara genelleyebilir miyiz?** Hayır. Çevrim içi örneklemle sınırlı ve keşfedici bir çalışma.
 
-**Yaptıklarınızla planlarınız nasıl ayrılıyor?** Çalışan kod ve testler gösterilir; tarayıcı kontrolü, literatür ve dönem sonu geliştirmeleri açık görevdir.
+**Yaptıklarınızla planlarınız nasıl ayrılıyor?** Çalışan kod, testler ve kaynak notu gösterilir; mobil/klavye kontrolü, ekip kod incelemesi, slaytların son durumu ve prova açık görevdir.
 
 ## Dönem sonuna doğru
 
@@ -101,8 +102,21 @@ Kategori çevirilerini ekipçe gözden geçirme, erişilebilirlik/mobil/gizlilik
 ## Bu sürümün kontrol kaydı
 
 - CSV ve XLSX normalize içerikleri birebir eşleşti.
-- 10 JavaScript hesaplama/kaynak kodu gizlilik testi geçti.
+- 22 JavaScript hesaplama, kaynak kodu gizlilik ve temizleme testi geçti.
 - 3 Python istatistik fonksiyonu testi geçti.
 - Modüler ve tek dosyalık JavaScript sözdizimi; belge bağlantıları ve SVG yapısı kontrol edildi.
-- Bu oturumdaki yerel bağlantı sorunu nedeniyle gerçek tarayıcıda görsel, mobil ve Network/Storage kontrolleri tamamlanamadı; ekip demo öncesi bu kontrolleri yapmalıdır.
+- Kerem, Opera GX üzerinde denediği senaryoda Network ve dört depolama alanının boş olduğunu bildirdi. Bu kullanıcı gözlemi otomatik test değildir.
+- Mobil/klavye ve sunum bilgisayarında uçtan uca prova henüz doğrulanmadı.
+- Sunumu yapacak kişinin VS Code üzerinden gerçek değişiklik, commit ve push gösterimi henüz doğrulanmadı.
 - GitHub canlı pano ve uzak depo bu yerel kontrollerle güncellenmiş sayılmaz.
+
+## Sunumdan önce uygulanacak kısa kontrol
+
+1. Seyfettin `demo.html` dosyasını sunum bilgisayarında açar; anketi bitirip kaynak, grup büyüklüğü ve oranların anlamını açıklar.
+2. “Ankete dön” ile boş başlangıç; araştırma ekranına ve başka sekmeye geçişte temizleme kontrol edilir. Hiç kullanmayan kişi akışı da denenir.
+3. Klavyeyle seçim/ilerleme ve dar ekranda görünüm denenir. Sorunlar Issue olarak kaydedilir; geçmeyen kontrol tamamlandı sayılmaz.
+4. VS Code'da bir gerçek belge iyileştirmesi yapılıp diff, status, add, commit ve push gösterilir. GitHub'da ilgili commit açılır.
+5. Kanban'da bir gerçek görev kabul ölçütüne göre taşınır. Ekibin yapmadığı değişiklikler ona aitmiş gibi gösterilmez.
+6. PowerPoint gelince okunabilir UML görselleri, kaynak atıfları, 12–15 dakikalık süre ve çalışan/planlanan ayrımı birlikte kontrol edilir.
+
+İnternet kesintisine karşı indirilen ZIP ve `demo.html` hazır bulundurulur. Kısa ekran kaydı yalnız istenirse yedek gösterimdir.
