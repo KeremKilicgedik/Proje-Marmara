@@ -27,6 +27,7 @@ const MIN_GROUP_SIZE = 30;
 const NONUSE = new Set(['Never', "I've tried them but stopped"]);
 const NO_TOOL = "I don't use any AI tools";
 
+// Seçenekleri kontrol et. Hiç kullanmayanlarda güncel araç ve amaç arama.
 function validate(data, answers) {
   const errors = [];
   for (const field of ['frequency', 'concern']) {
@@ -41,6 +42,7 @@ function validate(data, answers) {
   return [...new Set(errors)];
 }
 
+// Aynı kullanım sıklığı grubunu seç ve her sorunun oranını o grupta hesapla.
 function compare(data, answers) {
   if (validate(data, answers).length) throw new Error('Yanıtlar eksik veya birbiriyle uyumsuz.');
   const group = data.groups[answers.frequency];
@@ -50,6 +52,7 @@ function compare(data, answers) {
   const distributions = fields.map(field => {
     const counts = group.counts[field];
     if (!counts || Object.values(counts).some(n => !Number.isInteger(n) || n < 0)) throw new Error('Referans sayımları geçersiz.');
+    // Payda, bu sorunun gruptaki geçerli yanıt sayısıdır.
     const denominator = Object.values(counts).reduce((a, b) => a + b, 0);
     if (denominator > group.n) throw new Error('Tek seçimli soruda kişi paydası aşıldı.');
     return {
@@ -86,6 +89,7 @@ function view(id) {
   for (const v of views) $(v).hidden = v !== id;
   for (const [name, on] of [['nav-survey', id !== 'research-view'], ['nav-research', id === 'research-view']]) { $(name).classList.toggle('active', on); $(name).setAttribute('aria-pressed', String(on)); }
 }
+// Aktif soruyu ve seçeneklerini ekrana çiz.
 function drawQuestion(focus = true) {
   step = Math.min(step, path().length - 1); const key = path()[step];
   $('question-title').textContent = questions[key][0]; $('question-help').textContent = questions[key][1];
@@ -122,6 +126,7 @@ function renderResult() {
   answers = {}; step = 0; $('survey').reset(); $('options').replaceChildren();
   view('result-view'); $('result-title').focus();
 }
+// Hazır veri setinin analizini göster. Yeni ziyaretçinin yanıtını analize ekleme.
 function renderResearch() {
   $('sample-size').textContent = data.audit.rowCount.toLocaleString('tr-TR');
   for (const [value, label] of [[data.audit.rowCount, 'kaynak katılımcı'], [data.audit.nonemptyColumns, 'araştırma değişkeni'], [3, 'keşfedici hipotez']]) { const card = node('div', undefined, 'audit-card'); card.append(node('strong', value.toLocaleString('tr-TR')), node('span', label)); $('audit-cards').append(card); }
