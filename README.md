@@ -26,8 +26,8 @@ Tarayıcıda http://127.0.0.1:8000 adresini açın. `index.html` bu yöntemle ç
 |---|---|
 | Kerem (`KeremKilicgedik`) | Koordinasyon, veri analizi ve GitHub takibi |
 | Seyfettin (`seyfettinokmen53-oss`) | Uygulama geliştirme ve sunum |
-| Suhayb (`aloushsoheb-commits`) | Umut ile slayt hazırlama |
-| Umut (`Umtutu`) | Suhayb ile slayt hazırlama |
+| Suhayb (`aloushsoheb-commits`) | Slayt hazırlama, veri seti bulma |
+| Umut (`Umtutu`) | Slayt hazırlama |
 
 Başlangıç kodunu ve belgeleri Codex desteğiyle hazırladık. Ekip olarak kodu inceleme ve geliştirme çalışmasına devam ediyoruz.
 
